@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050b14">
+  <meta name="description" content="Ruler — a Solo Leveling-inspired fitness quest tracker.">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <title>RULER // SYSTEM</title>
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="scanlines" aria-hidden="true"></div>
+  <div class="system-overlay" id="systemOverlay" aria-live="polite"><div class="overlay-frame"><span class="overlay-eyebrow">SYSTEM MESSAGE</span><strong id="overlayTitle">QUEST CLEARED</strong><p id="overlayMessage">Experience acquired.</p><button id="overlayClose" class="secondary-button">ACKNOWLEDGE</button></div></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Ruler System home"><span class="brand-mark">R</span><span>RULER<span class="muted"> // SYSTEM</span></span></a>
+    <div class="top-actions"><span class="connection"><i></i> SYSTEM ONLINE</span><button class="icon-button" id="notifyBtn" aria-label="Enable notifications" title="Enable notifications">♧</button><button class="icon-button" id="soundBtn" aria-label="Toggle sound" title="Toggle sound">♫</button></div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div><p class="eyebrow">SYSTEM INTERFACE <span>•</span> DAILY PROTOCOL</p>
+        <h1>YOUR NEXT<br><em>EVOLUTION.</em></h1>
+        <p class="subhead">Consistency is your strongest weapon. Complete today's quests and earn your next level.</p>
+      </div>
+      <div class="level-orb"><div class="orb-ring"></div><span class="orb-label">CURRENT LEVEL</span><strong id="levelHero">01</strong><span id="rankHero">E-RANK HUNTER</span></div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="panel level-panel">
+        <div class="panel-heading"><span class="section-icon">◈</span><span>HUNTER STATUS</span><span class="tiny-tag">PROFILE 001</span></div>
+        <div class="level-row"><div><span class="label">LEVEL</span><strong class="level-number" id="level">1</strong></div><div class="xp-block"><div class="xp-label"><span>EXPERIENCE</span><span id="xpText">0 / 100 XP</span></div><div class="bar"><span id="xpBar"></span></div><small id="xpNext">100 XP to next level</small></div></div>
+        <div class="rank-line"><span>CLASS</span><strong id="className">UNAWAKENED</strong><span class="rank-chip" id="rankChip">E-RANK</span></div>
+      </article>
+
+    </section>
+
+    <section class="panel quest-panel">
+      <div class="panel-heading quest-heading"><div><span class="section-icon">!</span><span>DAILY QUEST</span><span class="live-tag">ACTIVE</span></div><span class="date" id="today"></span></div>
+      <h2>THE PATH TO BECOMING STRONG</h2>
+      <p class="panel-desc">Complete your personal baseline. Progress saves automatically on this device.</p>
+      <div class="quest-progress"><div><span>QUEST PROGRESS</span><strong id="questPercent">0%</strong></div><div class="bar"><span id="questBar"></span></div></div>
+      <div class="reset-line"><span>DAILY RESET IN</span><strong id="countdown">--:--:--</strong></div>
+      <div class="quest-list" id="questList"></div>
+      <div class="quest-footer"><span id="questStatus">SYSTEM MESSAGE: Your training begins now.</span><button class="primary-button" id="claimBtn" disabled>CLAIM REWARD <span>↗</span></button></div>
+    </section>
+
+    <section class="panel notification-panel">
+      <div class="panel-heading"><span class="section-icon">♧</span><span>NOTIFICATION PROTOCOL</span><span class="tiny-tag" id="notifyStatus">NOT CONFIGURED</span></div>
+      <p class="panel-desc">Set a daily reminder for your quest. Ruler must remain open for these browser-based reminders to run.</p>
+      <div class="notification-controls">
+        <label for="reminderTime">DAILY REMINDER TIME</label>
+        <input id="reminderTime" type="time" value="20:00">
+        <button class="primary-button" id="saveReminderBtn">SAVE REMINDER</button>
+      </div>
+      <p class="micro-note" id="reminderNote">Reminder is off. Choose a time and enable browser notifications.</p>
+    </section>
+
+    <section class="panel attributes-panel">
+      <div class="panel-heading"><span class="section-icon">✣</span><span>ATTRIBUTES</span><span class="tiny-tag">LIVE DATA</span></div>
+      <div class="attribute-list" id="attributeList"></div>
+      <p class="micro-note">Attributes are game progress indicators, not medical measurements.</p>
+    </section>
+
+    <section class="panel tools-panel">
+      <div class="panel-heading"><span class="section-icon">⌘</span><span>SYSTEM TOOLS</span></div>
+      <div class="tools-row"><div><strong>MANUAL XP</strong><p>Log a completed workout or healthy habit.</p></div><button class="secondary-button" id="bonusBtn">+25 XP</button></div>
+      <div class="tools-row"><div><strong>DATA CONTROL</strong><p>Your progress is stored in this browser. Export a backup or reset your save.</p></div><div class="button-pair"><button class="secondary-button" id="exportBtn">EXPORT</button><button class="danger-button" id="resetBtn">RESET</button></div></div>
+    </section>
+    <footer><span>RULER SYSTEM <b>v1.0</b></span><span>BUILT FOR YOUR REAL-WORLD EVOLUTION</span></footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
+  <script src="/google-sync.js"></script>
+</body>
+</html>

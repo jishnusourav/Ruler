@@ -1,0 +1,10 @@
+{
+  "name": "Ruler \u2014 Fitness System",
+  "short_name": "Ruler",
+  "description": "A Solo Leveling-inspired fitness quest tracker.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050a12",
+  "theme_color": "#050b14",
+  "icons": []
+}
